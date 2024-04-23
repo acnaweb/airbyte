@@ -18,7 +18,7 @@ helm search repo airbyte
 ```sh
 export ENVIRONMENT=dev
 export AIRBYTE_RELEASE=airbyte
-helm install $AIRBYTE_RELEASE airbyte/airbyte --namespace $ENVIRONMENT --create-namespace
+helm install $AIRBYTE_RELEASE airbyte/airbyte --namespace $ENVIRONMENT --create-namespace --version 0.64.241
 ```
 
 #### Navigate
