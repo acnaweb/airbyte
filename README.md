@@ -26,7 +26,7 @@ helm install $AIRBYTE_RELEASE airbyte/airbyte --namespace $ENVIRONMENT --create-
 ```sh
 export POD_NAME=$(kubectl get pods --namespace $ENVIRONMENT -l "app.kubernetes.io/name=webapp" -o jsonpath="{.items[0].metadata.name}")
 export CONTAINER_PORT=$(kubectl get pod --namespace $ENVIRONMENT $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
-kubectl --namespace $ENVIRONMENT port-forward $POD_NAME 8080:$CONTAINER_PORT
+kubectl --namespace $ENVIRONMENT port-forward $POD_NAME 8000:$CONTAINER_PORT
 ```
 
 > - http://localhost:8000
