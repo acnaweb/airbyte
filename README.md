@@ -17,7 +17,7 @@ helm search repo airbyte
 #### Setup Environment
 
 ```sh
-export ENVIRONMENT=dev
+export ENVIRONMENT=data-ingestion
 export AIRBYTE_RELEASE=airbyte
 ```
 
