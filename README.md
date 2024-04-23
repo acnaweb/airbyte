@@ -13,11 +13,16 @@ helm repo update
 helm search repo airbyte
 ```
 
-#### Install
+#### Setup Environment
 
 ```sh
 export ENVIRONMENT=dev
 export AIRBYTE_RELEASE=airbyte
+```
+
+#### Install
+
+```sh
 helm install $AIRBYTE_RELEASE airbyte/airbyte --namespace $ENVIRONMENT --create-namespace --version 0.64.241
 ```
 
