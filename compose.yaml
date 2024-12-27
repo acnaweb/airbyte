@@ -1,0 +1,32 @@
+services:
+  db_source:
+    image: postgres:16.1
+    ports:
+      - "5780:5432"
+    environment:
+      - POSTGRES_DB=source
+      - POSTGRES_USER=developer
+      - POSTGRES_PASSWORD=my_pwd
+    volumes:
+      - pgdata_source:/var/lib/postgresql/data
+
+  db_target:
+    image: postgres:16.1
+    ports:
+      - "5785:5432"
+    environment:
+      - POSTGRES_DB=target
+      - POSTGRES_USER=developer
+      - POSTGRES_PASSWORD=my_pwd
+    volumes:
+      - pgdata_target:/var/lib/postgresql/data     
+
+  db_source_cdc:
+    image: debezium/postgres:16
+    ports:
+      - "5439:5432"
+    environment:
+      - POSTGRES_PASSWORD=my_pwd       
+volumes:
+  pgdata_source:
+  pgdata_target:
