@@ -21,12 +21,20 @@ services:
     volumes:
       - pgdata_target:/var/lib/postgresql/data     
 
-  db_source_cdc:
+  db_source_debezium:
     image: debezium/postgres:16
     ports:
       - "5439:5432"
     environment:
       - POSTGRES_PASSWORD=my_pwd       
+
+  db_target_debezium:
+    image: debezium/postgres:16
+    ports:
+      - "5552:5432"
+    environment:
+      - POSTGRES_PASSWORD=my_pwd  
+
 volumes:
   pgdata_source:
   pgdata_target:
