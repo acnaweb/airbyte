@@ -117,3 +117,9 @@ kubectl --namespace $ENVIRONMENT port-forward $POD_NAME 8000:$CONTAINER_PORT
 
 - https://airbyte.com/
 - https://docs.airbyte.com/deploying-airbyte/on-kubernetes-via-helm
+
+
+## To Study
+
+quicksort
+
